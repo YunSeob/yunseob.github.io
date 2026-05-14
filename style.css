@@ -1,108 +1,294 @@
+/* CSS 변수 설정 */
+:root {
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-sub: #94a3b8;
+    /* 🟢 수정됨: 다크 모드에 어울리는 세련된 파스텔 핑크 (Tailwind Pink 400) */
+    --accent: #f472b6; 
+    --border-color: rgba(148, 163, 184, 0.2);
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  background: #0f172a;
-  color: white;
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
 }
 
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+/* 내비게이션 바 */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.hero-content {
-  max-width: 900px;
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
-.tag {
-  color: #38bdf8;
-  font-size: 1rem;
-  margin-bottom: 1rem;
+nav a:hover {
+    color: var(--accent);
 }
 
-.hero h1 {
-  font-size: 5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+/* 메인 컨테이너 */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 7rem 2rem 4rem;
 }
 
-.description {
-  font-size: 1.3rem;
-  color: #cbd5e1;
-  max-width: 700px;
+section {
+    margin-bottom: 6rem;
+    animation: fadeIn 1s ease-in-out;
 }
 
-.buttons {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
+h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--accent);
+    border-bottom: 2px solid var(--bg-card);
+    padding-bottom: 0.5rem;
 }
 
-.buttons a {
-  text-decoration: none;
-  color: white;
-  background: #1e293b;
-  padding: 0.8rem 1.5rem;
-  border-radius: 12px;
-  transition: 0.3s;
+/* 1. About 섹션 (사진 + 텍스트 레이아웃) */
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
 }
 
-.buttons a:hover {
-  background: #38bdf8;
-  color: black;
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* 완벽한 동그라미 생성 */
+    object-fit: cover;  /* 직사각형 이미지가 찌그러지지 않고 크롭됨 */
+    border: 4px solid var(--bg-card);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    flex-shrink: 0;
 }
 
-.section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 6rem 2rem;
+.about-text .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-sub);
+    margin-bottom: 1.5rem;
 }
 
-.section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
+/* 2. 확장형(Accordion) 카드 디자인 */
 .card {
-  background: #1e293b;
-  padding: 2rem;
-  border-radius: 20px;
-  transition: 0.3s;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.card-summary {
+    display: flex;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.card h3 {
-  margin-bottom: 1rem;
+.card-summary:hover {
+    background-color: #253347;
 }
 
-.card p {
-  color: #cbd5e1;
+/* 🟢 수정된 부분: 이미지 래퍼 (흰색 배경 및 패딩) */
+.card-img-wrapper {
+    width: 180px;
+    height: 120px;
+    background-color: #ffffff; /* 흰색 배경 적용 */
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem; /* 안쪽 여백을 주어 그림이 숨 막히지 않게 함 */
 }
 
-.publication {
-  background: #1e293b;
-  padding: 2rem;
-  border-radius: 20px;
+/* 🟢 수정된 부분: 이미지가 잘리지 않고 영역 안에 다 보이게 (contain) */
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
 }
 
-.contact a {
-  color: #38bdf8;
+.card-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
 }
+
+.card-info .venue {
+    color: var(--text-sub);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-info .short-desc {
+    font-size: 0.95rem;
+    color: var(--text-sub);
+    margin-bottom: 0.5rem;
+}
+
+.expand-icon {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+/* 카드 세부 내용 (초기에는 숨김) */
+.card-details-wrapper {
+    display: grid;
+    grid-template-rows: 0fr; /* CSS Grid를 이용한 부드러운 애니메이션 */
+    transition: grid-template-rows 0.4s ease-out;
+}
+
+.card-details {
+    overflow: hidden;
+    padding: 0 1.5rem; /* 좌우 패딩만 유지 */
+    color: #cbd5e1;
+}
+
+.card-details h4 {
+    color: var(--text-main);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+.card-details p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* JS로 'active' 클래스가 추가되었을 때 (펼쳐짐) */
+.card.active .card-details-wrapper {
+    grid-template-rows: 1fr;
+}
+
+.card.active .card-summary {
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* 태그 스타일 */
+.tags { margin-bottom: 0.5rem; }
+.tag {
+    display: inline-block;
+    /* 🟢 수정됨: 배경색도 핑크 톤에 맞게 투명도 적용 (RGB 244, 114, 182) */
+    background-color: rgba(244, 114, 182, 0.15);
+    color: var(--accent);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+/* 🟢 새로 추가된 부분: 논문 바로가기 링크 버튼 스타일 */
+.paper-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background-color: rgba(244, 114, 182, 0.1);
+    color: var(--accent);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.paper-link:hover {
+    background-color: rgba(244, 114, 182, 0.3);
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    padding: 2rem; /* 카드의 안쪽 여백을 넉넉하게 줌 */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.project-card .short-desc {
+    color: var(--text-sub);
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* 3000x1400 이미지를 온전히 담기 위한 흰색 배경 영역 */
+.project-img-wrapper {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1rem; /* 그림 가장자리 여백 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 이미지 비율을 유지하면서 가로 크기에 자동 맞춤 */
+.project-img {
+    width: 100%;
+    height: auto; /* 원본 비율(예: 3000x1400)을 깨지 않고 자동 조절 */
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* 모바일 화면 대응 (화면이 작아지면 가로배치를 세로배치로 변경) */
+@media (max-width: 768px) {
+    .about-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .card-summary {
+        flex-direction: column;
+    }
+    
+    /* 🟢 수정된 부분: 모바일에서도 배경 크기 대응 */
+    .card-img-wrapper {
+        width: 100%;
+        height: 180px;
+    }
+    .project-card {
+        padding: 1.5rem 1rem;
+    }
+    .project-img-wrapper {
+        padding: 0.5rem;
+    }
+}
+
+footer { text-align: center; padding: 2rem; color: var(--text-sub); font-size: 0.9rem; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }

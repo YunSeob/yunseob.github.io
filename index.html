@@ -1,101 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yun Seob Kim | Portfolio</title>
-
-  <link rel="stylesheet" href="style.css"/>
-  <script defer src="script.js"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yun-Seob Kim | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <header class="hero">
-    <div class="hero-content">
-      <p class="tag">AI Research Engineer</p>
-      <h1>Yun Seob Kim</h1>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+    </nav>
 
-      <p class="description">
-        Researching LoRa, Deep Learning, Wireless Communication,
-        and AI-driven Signal Restoration.
-      </p>
+    <div class="container">
+        <!-- 1. 내 소개 -->
+        <section id="about">
+            <div class="about-wrapper">
+                <!-- 증명사진 (직사각형 이미지를 넣어도 CSS로 동그랗게 자동 크롭됩니다) -->
+                <img src="images/author1.jpg" alt="Yun-Seob Kim" class="profile-img">
+                
+                <div class="about-text">
+                    <h1>Yun-Seob Kim</h1>
+                    <p class="subtitle">Integrated Ph.D. Student | INC Lab @ Pusan National University</p>
+                    <p>
+                        무선 통신과 인공지능의 융합을 연구하는 통합과정 연구원입니다. 특히 초저전력, 초저 SNR 환경에서의 
+                        LoRa 무선 통신 시스템 개선과 경량화된 딥러닝/머신러닝 모델 개발에 주력하고 있습니다. 
+                        신호 처리 기술과 최신 AI 아키텍처(CNN, Transformer 등)를 결합하여 국방, 조선해양, 스마트 시티 등 
+                        실제 산업 환경에 적용 가능한 강건한 시스템을 구축하는 것에 관심이 많습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-      <div class="buttons">
-        <a href="https://github.com/" target="_blank">GitHub</a>
-        <a href="#">Google Scholar</a>
-      </div>
+        <!-- 2. 작성한 논문들 (Publications 우선 배치) -->
+        <section id="publications">
+            <h2>Publications</h2>
+            
+            <!-- 논문 카드 1 -->
+            <div class="card">
+                <div class="card-summary">
+                    <!-- 논문 대표 이미지 -->
+                    <div class="card-img-wrapper">
+                        <img src="images/journal_2026.png" alt="Paper Image" class="card-img">
+                    </div>
+                    <div class="card-info">
+                        <h3>Chirp-Aware Self-Attention for Robust LoRa Preamble Detection under Ultra-Low SNR</h3>
+                        <p class="venue"><strong>IEEE Internet of Things Journal (2026)</strong></p>
+                        <!-- 🟢 새로 추가된 부분: 논문 키워드(태그) -->
+                        <div class="tags">
+                            <span class="tag">LoRa</span>
+                            <span class="tag">Self-Attention</span>
+                            <span class="tag">Preamble Detection</span>
+                        </div>
+                        <p class="short-desc">초저 SNR 환경에서 LoRa 프리앰블 탐지 성능을 극대화하기 위해 Chirp 신호의 특성을 반영한 연구입니다.</p>
+                        <a href="https://ieeexplore.ieee.org/document/11386915" target="_blank" class="paper-link" onclick="event.stopPropagation();">🔗 Paper Link</a>
+                        <div class="expand-icon">▼ 더 보기</div>
+                    </div>
+                </div>
+                <!-- 클릭 시 펼쳐지는 상세 내용 -->
+                <div class="card-details-wrapper">
+                    <div class="card-details">
+                        <h4>Abstract (요약)</h4>
+                        <p>여기에 논문의 초록(Abstract)이나 자세한 연구 배경을 적어주세요. 기존 방식의 한계점과 본 논문에서 제안하는 Self-Attention 메커니즘의 수학적/구조적 이점을 상세히 기술할 수 있습니다.</p>
+                        <h4>My Contribution (나의 기여도)</h4>
+                        <p>- 모델 아키텍처 설계 및 파이토치(PyTorch) 구현<br>- 시뮬레이션 환경 구축 및 성능 평가 데이터 추출</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-summary">
+                    <!-- 논문 대표 이미지 -->
+                    <div class="card-img-wrapper">
+                        <img src="images/journal_2024_iaria.png" alt="Paper Image" class="card-img">
+                    </div>
+                    <div class="card-info">
+                        <h3>Bus Indoor Situation Monitoring System Based on Congestion Model Using Lightweight Platform</h3>
+                        <p class="venue"><strong>IARIA Congress 2024 (2024)</strong></p>
+                        <!-- 🟢 새로 추가된 부분: 논문 키워드(태그) -->
+                        <div class="tags">
+                            <span class="tag">LoRa</span>
+                            <span class="tag">Self-Attention</span>
+                            <span class="tag">Preamble Detection</span>
+                        </div>
+                        <p class="short-desc">초저 SNR 환경에서 LoRa 프리앰블 탐지 성능을 극대화하기 위해 Chirp 신호의 특성을 반영한 연구입니다.</p>
+                        <a href="https://personales.upv.es/thinkmind/dl/conferences/iariacongress/iaria_congress_2024/iaria_congress_2024_2_240_50115.pdf" target="_blank" class="paper-link" onclick="event.stopPropagation();">🔗 Paper Link</a>
+                        <div class="expand-icon">▼ 더 보기</div>
+                    </div>
+                </div>
+                <!-- 클릭 시 펼쳐지는 상세 내용 -->
+                <div class="card-details-wrapper">
+                    <div class="card-details">
+                        <h4>Abstract (요약)</h4>
+                        <p>여기에 논문의 초록(Abstract)이나 자세한 연구 배경을 적어주세요. 기존 방식의 한계점과 본 논문에서 제안하는 Self-Attention 메커니즘의 수학적/구조적 이점을 상세히 기술할 수 있습니다.</p>
+                        <h4>My Contribution (나의 기여도)</h4>
+                        <p>- 모델 아키텍처 설계 및 파이토치(PyTorch) 구현<br>- 시뮬레이션 환경 구축 및 성능 평가 데이터 추출</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 진행한 프로젝트 (Projects) -->
+        <section id="projects">
+            <h2>Projects</h2>
+            
+            <!-- 프로젝트 카드 1 -->
+            <div class="project-card">
+                <h3>GVA 한화-데이터 네트워크 구조 설계 및 성능 검증 (2024)</h3>
+                <div class="tags">
+                    <span class="tag">Hanwha Aerospace</span>
+                    <span class="tag">Multiple Real-time Video Streaming</span>
+                    <span class="tag">Qt</span>
+                    <span class="tag">GStreamer</span>
+                    <span class="tag">FFmpeg</span>
+                </div>
+                <p class="short-desc">Qt 6.5 기반 다중 카메라 영상 스트림의 저지연 처리 및 시각화 SW 개발</p>
+                <p class="short-desc">
+                    <b>- GStreamer 파이프라인 설계 및 구현</b> : H.264/H.265 코덱의 다중 스트림을 실시간으로 송수신하는 GStreamer 파이프라인을 설계 <br/>
+                    <b>- Qt 기반 저지연 렌더링 기능 개발 </b> : GStreamer와 Qt 프레임워크와 연동하여 수신 및 디코딩된 영상 데이터를 다중 화면 디스플레이에 저지연으로 렌더링하는 기능을 구현
+                </p>
+                
+                <!-- 가로로 긴 3000x1400 이미지를 위한 대형 래퍼 -->
+                <div class="project-img-wrapper">
+                    <!-- src 부분에 3000x1400 해상도의 실제 이미지 경로를 넣어주세요 -->
+                    <img src="images/projects6.png" alt="Project Architecture" class="project-img">
+                </div>
+            </div>
+
+            <!-- 프로젝트 카드 2 -->
+            <div class="project-card">
+                <h3>차세대 장갑차 GVA (Generic Vehicle Architecture) 기반 네트워크 분석 및 SW 개발 (2022~2023)</h3>
+                <div class="tags">
+                    <span class="tag">Hanwha Aerospace</span>
+                    <span class="tag">Network Analysis</span>
+                </div>
+                <p class="short-desc">차세대 군용 전투차량의 네트워크 트래픽 구조 분석 및 최적화 방안 설계</p>
+                <p class="short-desc">
+                    <b>- 네트워크 최적화</b> : GVA 네트워크의 부하를 분석하여 실시간 데이터 전송 안정성 확보 <br/>
+                    <b>- 실시간 영상 처리</b> : 다중 카메라 영상 스트림의 저지연 처리 및 시각화 SW 개발 <br/>
+                    <b>- DDS 미들웨어</b> : DDS 미들웨어 기반 기반 영상 스트림 송수신 구조 설계 및 성능 검증  <br/>
+                </p>
+                
+                <div class="project-img-wrapper">
+                    <img src="images/projects5.png" alt="Project Architecture" class="project-img">
+                </div>
+            </div>
+
+            <!-- 프로젝트 카드 3 -->
+            <div class="project-card">
+                <h3>인플루언서를 위한 인공지능 기반 최적 캠페인 추천 프레임워크를 갖는 시스템 개발 (2024)</h3>
+                <div class="tags">
+                    <span class="tag">AutoEncoder</span>
+                    <span class="tag">Recommendation System</span>
+                    <span class="tag">Project Management</span>
+                </div>
+                <p class="short-desc">3가지 모델 개발 과정 총괄 및 협업 주도 → 연구 방향 설정과 성과 목표 달성 리드</p>
+                <p class="short-desc">
+                    <b>- 프로젝트 매니지먼트</b> : DeepSORT를 적용, 이동과 겹침이 잦은 환경에서도 고유 ID로 승객을 식별하여 실시간 인원수를 집계하는 기능 개발 <br/>
+                    <b>- 핵심 모델 개발 및 성능 검증</b> : 신경망 설계부터 학습, 성능 평가까지 전 과정을 주도하여 추천 시스템의 기반 구축 <br/>
+                </p>
+
+                <div class="project-img-wrapper">
+                    <img src="images/projects4.png" alt="Project Architecture" class="project-img">
+                </div>
+            </div>
+
+            <!-- 프로젝트 카드 4 -->
+            <div class="project-card">
+                <h3>버스 내부 상황 정보 전달을 위한 혼잡도 및 버스 인원수 측정 기술 (2023)</h3>
+                <div class="tags">
+                    <span class="tag">삼원FA</span>
+                    <span class="tag">YOLOv5</span>
+                    <span class="tag">DeepSORT</span>
+                </div>
+                <p class="short-desc">승객에게 실시간 혼잡도 정보를 제공하여 대중교통 이용 편의성을 높이고, 합리적인 탑승 선택을 지원하는 것을 목표로 진행</p>
+                <p class="short-desc">
+                    <b>- 실시간 객체 추적</b> : DeepSORT를 적용, 이동과 겹침이 잦은 환경에서도 고유 ID로 승객을 식별하여 실시간 인원수를 집계하는 기능 개발 <br/>
+                    <b>- 모니터링 시스템 구축</b> : 경량 엣지 컴퓨팅 시스템을 구축하여 영상 스트림을 보드 내에서 처리하는 시스템 설계 <br/>
+                    <b><a href = "https://www.iaria.org/conferences2024/awardsIARIACongress24/iariacongress2024_a1.pdf" style="color:aquamarine;">IARIA Congress 2024 Best Award 수상</a></b>
+                </p>
+                
+                <div class="project-img-wrapper">
+                    <img src="images/projects3.png" alt="Project Architecture" class="project-img">
+                </div>
+            </div>
+
+            <!-- 프로젝트 카드 5 -->
+            <div class="project-card">
+                <h3>차량 번호판 인식 기술을 적용한 버스 정위치 정차 시스템 (2022)</h3>
+                <div class="tags">
+                    <span class="tag">삼원FA</span>
+                    <span class="tag">Vision</span>
+                    <span class="tag">YOLOv5</span>
+                </div>
+                <p class="short-desc">버스 정류장의 실시간 영상에서 특정 버스의 진입을 인지하고, 정위치 정차를 유도하는 시스템 개발을 목표로 진행</p>
+                <p class="short-desc">
+                    <b>- 실시간 차량 탐지 및 번호판 인식</b> : 비전 기반 차량 탐지 및 번호판 인식 기술 개발<br/>
+                    <b>- 애플리케이션 연동 및 시각화</b> : 관심 차선 추출과 인식된 번호판을 웹 화면에 실시간으로 표시
+                </p>
+                
+                <div class="project-img-wrapper">
+                    <img src="images/projects2.png" alt="Project Architecture" class="project-img">
+                </div>
+            </div>
+
+            <!-- 프로젝트 카드 6 -->
+            <div class="project-card">
+                <h3>야드 전 영역 및 선박 내부 환경을 고려한 광대역 저전력 네트워크 설계 및 적용성 평가 (2021)</h3>
+                <div class="tags">
+                    <span class="tag">LoRa</span>
+                    <span class="tag">LPWAN</span>
+                    <span class="tag">펌웨어 개발</span>
+                </div>
+                <p class="short-desc">넓고 복잡한 야드 환경에서 GPS 장비의 위치를 실시간으로 추적하기 위해 LoRa 통신망 설계와 펌웨어 개발</p>
+                <p class="short-desc">
+                    <b>- 펌웨어 개발</b> : LoRa 송신 보드에 GPS 모듈 탑재(UART 통신) 및 LoRa 신호를 송수신하는 펌웨어 개발데이터 파이프라인 <br/>
+                    <b>- 구축</b> : LoRa 수신 데이터를 네트워크 서버로 전송하여 웹 화면에 실시간으로 시각화
+                </p>
+                
+                <div class="project-img-wrapper">
+                    <img src="images/projects1.png" alt="Project Architecture" class="project-img">
+                </div>
+            </div>
+        </section>
     </div>
-  </header>
 
-  <section class="section">
-    <h2>About Me</h2>
+    <footer>
+        <p>&copy; 2026 Yun-Seob Kim. All rights reserved.</p>
+    </footer>
 
-    <p>
-      I am a graduate researcher focusing on AI-based wireless communication systems,
-      LoRa signal restoration, spectrogram deep learning,
-      and real-time multimedia streaming systems.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Projects</h2>
-
-    <div class="project-grid">
-
-      <div class="card">
-        <h3>LoRa Signal Restoration</h3>
-        <p>
-          Deep learning-based symbol restoration under ultra-low SNR environments
-          using CNN and Transformer architectures.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>RTSP Streaming System</h3>
-        <p>
-          Real-time IP camera streaming system using Qt and GStreamer
-          with ultra-low latency rendering.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Influencer Recommendation Framework</h3>
-        <p>
-          Deep embedded clustering-based recommendation system
-          using multimodal influencer data.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Publications</h2>
-
-    <div class="publication">
-      <h3>IEEE Internet of Things Journal</h3>
-      <p>
-        Deep Learning-based LoRa Signal Restoration
-        in Ultra-Low SNR Environments
-      </p>
-    </div>
-
-  </section>
-
-  <section class="section contact">
-    <h2>Contact</h2>
-
-    <p>Email: your_email@pusan.ac.kr</p>
-
-    <p>
-      GitHub:
-      <a href="https://github.com/">https://github.com/</a>
-    </p>
-  </section>
-
+    <script src="script.js"></script>
 </body>
 </html>
