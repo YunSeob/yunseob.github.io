@@ -1,13 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my-portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yun Seob Kim | Portfolio</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <p class="tag">AI Research Engineer</p>
+      <h1>Yun Seob Kim</h1>
+
+      <p class="description">
+        Researching LoRa, Deep Learning, Wireless Communication,
+        and AI-driven Signal Restoration.
+      </p>
+
+      <div class="buttons">
+        <a href="https://github.com/" target="_blank">GitHub</a>
+        <a href="#">Google Scholar</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2>About Me</h2>
+
+    <p>
+      I am a graduate researcher focusing on AI-based wireless communication systems,
+      LoRa signal restoration, spectrogram deep learning,
+      and real-time multimedia streaming systems.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+
+      <div class="card">
+        <h3>LoRa Signal Restoration</h3>
+        <p>
+          Deep learning-based symbol restoration under ultra-low SNR environments
+          using CNN and Transformer architectures.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>RTSP Streaming System</h3>
+        <p>
+          Real-time IP camera streaming system using Qt and GStreamer
+          with ultra-low latency rendering.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Influencer Recommendation Framework</h3>
+        <p>
+          Deep embedded clustering-based recommendation system
+          using multimodal influencer data.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Publications</h2>
+
+    <div class="publication">
+      <h3>IEEE Internet of Things Journal</h3>
+      <p>
+        Deep Learning-based LoRa Signal Restoration
+        in Ultra-Low SNR Environments
+      </p>
+    </div>
+
+  </section>
+
+  <section class="section contact">
+    <h2>Contact</h2>
+
+    <p>Email: your_email@pusan.ac.kr</p>
+
+    <p>
+      GitHub:
+      <a href="https://github.com/">https://github.com/</a>
+    </p>
+  </section>
+
+</body>
 </html>
