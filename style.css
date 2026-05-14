@@ -119,8 +119,8 @@ h2 {
 
 /* 🟢 수정된 부분: 이미지 래퍼 (흰색 배경 및 패딩) */
 .card-img-wrapper {
-    width: 180px;
-    height: 120px;
+    width: 300px;
+    height: 240px;
     background-color: #ffffff; /* 흰색 배경 적용 */
     border-radius: 8px;
     flex-shrink: 0;
